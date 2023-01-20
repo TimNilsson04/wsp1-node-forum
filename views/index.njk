@@ -1,4 +1,11 @@
 {% extends "layout.njk" %}
 {% block  content %}
   <h1>Hi</h1>
+  <ul>
+    {% for row in rows %}
+        <li>
+            {{ row | dump }}
+        </li>
+    {% endfor %}
+</ul>
 {% endblock %}

@@ -36,7 +36,16 @@ body{
 a{
     color: white;
 }
+
+.text-muted{
+    color: white !important;
+}
 .column{
    justify-content: center;
    text-align: center;
+   padding-bottom: 10rem;
+}
+
+.center{
+    padding-bottom: 15rem;
 }

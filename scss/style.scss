@@ -1,0 +1,13 @@
+@use "reset";
+
+body{
+    background-color: #121212;
+    color: white;
+    justify-content: center;
+}
+
+.column{
+    display: grid;
+    grid-template-columns: auto ;
+   justify-content: center;
+}

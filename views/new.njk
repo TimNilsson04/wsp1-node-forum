@@ -1,4 +1,8 @@
+{% extends "layout.njk" %}
+{% block  content %}
+<div class="column">
 <form action="/new" method="post">
+    <h1><a href="/">Home</a></h1>
     <label for="author">Författare</label>
     <select name="author" id="author">
     {% for user in users %}
@@ -11,3 +15,5 @@
     <textarea name="content" id="content" cols="30" rows="10"></textarea>
     <button type="submit">Skicka</button>
 </form>
+</div>
+{% endblock %}

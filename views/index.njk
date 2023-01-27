@@ -3,21 +3,42 @@
 <header class="d-flex justify-content-center py-3">
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
-      <li class="nav-item"><a href="/new" class="nav-link">Database</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+      <li class="nav-item"><a href="/new" class="nav-link">Write</a></li>
+      <li class="nav-item"><a href="/database" class="nav-link">Data</a></li>
       <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
       <li class="nav-item"><a href="#" class="nav-link">About</a></li>
     </ul>
   </header>
-  <div class="center">
-  <ul>
-    {% for row in rows %}
-        <p>
-            {{ row | dump }}
-        </p>
-    {% endfor %}
-</ul>
-</div>
+
+
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 mb-3">Best Forum In The World!</h1>
+      <p class="col-lg-10 fs-4">This is a forum built with Tableplus databases. This is a make in progress and i am working on it diligently. Enjoy my product to the fullest and try to make some posts :).</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-light">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+        <hr class="my-4">
+        <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+      </form>
+    </div>
+  </div>
+
+
 
 <footer class="py-5">
     <div class="row">

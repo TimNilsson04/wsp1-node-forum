@@ -18289,7 +18289,6 @@ progress {
 body {
   background-color: #121212;
   color: white;
-  text-align: center;
   width: 100%;
 }
 
@@ -18309,9 +18308,9 @@ a {
 
 .center {
   padding-bottom: 15rem;
-  background-color: rgb(74, 74, 74);
   margin-left: 15rem;
   margin-right: 15rem;
+  text-align: left;
 }
 
 .row {
@@ -18320,6 +18319,32 @@ a {
 
 label {
   color: black;
+}
+
+main {
+  width: min(80ch, 100vw - 2rem);
+  margin-inline: auto;
+}
+
+input {
+  width: 19.6%;
+}
+
+.title {
+  margin-left: 39.7%;
+}
+
+select {
+  width: 19.6%;
+}
+
+textarea {
+  width: 39.4%;
+}
+
+.box {
+  background-color: rgb(74, 74, 74);
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

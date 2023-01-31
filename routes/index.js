@@ -21,7 +21,7 @@ router.get('/', async function (req, res, next) {
 });
 
 router.get('/database', async function (req, res, next) {
-    const [rows] = await promisePool.query("SELECT * FROM tn03forum");
+    const [rows] = await promisePool.query("SELECT * FROM tn03forum ORDER BY createdAt DESC");
     res.render('database.njk', {
         rows: rows,
         title: 'Forum',

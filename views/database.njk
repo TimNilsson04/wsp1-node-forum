@@ -14,9 +14,14 @@
   <div class="center">
   <ul>
     {% for row in rows %}
-        <p>
-            {{ row | dump }}
-        </p>
+        <div class="box">
+           <h4> {{ row.title }} </h4>
+           <p>{{ row.content }}</p>
+        </div>
+            #{{ row.id }} 
+            {{ row.createdAt }}
+            {{ row.authorId }}
+        
     {% endfor %}
 </ul>
 </div>

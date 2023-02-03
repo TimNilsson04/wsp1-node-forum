@@ -5,6 +5,7 @@ const app = express();
 const port = 4200;
 const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
 nunjucks.configure('views', {
     autoescape: true,
@@ -13,10 +14,12 @@ nunjucks.configure('views', {
 
 app.use(express.static('public'))
 
+
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencode
 
 app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);

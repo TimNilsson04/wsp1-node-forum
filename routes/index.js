@@ -20,14 +20,13 @@ router.get('/', async function (req, res, next) {
     });
 });
 
-router.get('/database', async function (req, res, next) {
-    const [rows] = await promisePool.query("SELECT * FROM tn03forum ORDER BY createdAt DESC");
-    res.render('database.njk', {
+router.get('/forum', async function (req, res, next) {
+    const [rows] = await promisePool.query("SELECT tn03forum.*, tn03users.name FROM tn03forum JOIN tn03users ON tn03forum.authorId = tn03users.id ORDER BY createdAt DESC");
+    res.render('forum.njk', {
         rows: rows,
         title: 'Forum',
     });
 });
-
 
 router.get('/new', async function (req, res, next) {
     const [users] = await promisePool.query("SELECT * FROM tn03users");
@@ -36,6 +35,34 @@ router.get('/new', async function (req, res, next) {
         users,
     });
 });
+
+router.get('/', async function (req, res, next) {
+    const [rows] = await promisePool.query(`
+    SELECT tn03forum.*, tn03users.name AS username
+    FROM tn03forum
+    JOIN tn03users ON tn03forum.authorId = tn03users.id;`);
+    res.render('forum.njk', {
+        rows: rows,
+        title: 'Forum',
+    });
+});
+
+router.get('/post/:id', async function (req, res) {
+    const [rows] = await promisePool.query(
+        `SELECT tn03forum.*, tn03users.name AS username
+        FROM tn03forum
+        JOIN tn03users ON tn03forum.authorId = tn03users.id
+        WHERE tn03forum.id = ?;`,
+        [req.params.id]
+    );
+
+    res.render('post.njk', {
+        post: rows[0],
+        title: 'Forum',
+    });
+});
+
+module.exports = router;
 
 
 router.post('/new', async function (req, res, next) {

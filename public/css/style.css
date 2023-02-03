@@ -18294,6 +18294,7 @@ body {
 
 a {
   color: white;
+  text-decoration: 0;
 }
 
 :root {
@@ -18310,7 +18311,31 @@ a {
   padding-bottom: 15rem;
   margin-left: 15rem;
   margin-right: 15rem;
-  text-align: left;
+}
+
+.box {
+  padding-top: 0.2rem;
+  background-color: rgb(74, 74, 74);
+  margin-top: 1rem;
+  border-radius: 15px;
+  padding-left: 0.5rem;
+}
+.box > .right1 {
+  text-align: right;
+  margin-bottom: 0.2rem;
+  padding-right: 0.4rem;
+  font-size: 1.5rem;
+}
+
+.right {
+  text-align: right;
+  background-color: rgb(74, 74, 74);
+  padding-right: 0.5rem;
+  border-radius: 10px;
+}
+
+.margin {
+  margin: 0.2rem;
 }
 
 .row {
@@ -18340,11 +18365,6 @@ select {
 
 textarea {
   width: 39.4%;
-}
-
-.box {
-  background-color: rgb(74, 74, 74);
-  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
